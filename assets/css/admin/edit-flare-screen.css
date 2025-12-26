@@ -44,7 +44,7 @@ body.post-type-p21-flareo-flare {
 	margin: 0;
 }
 
-.post-type-p21-flareo-flare .postbox:not(#p21-flareo-flare-legendary-meta-box-ui) {
+.post-type-p21-flareo-flare .postbox:not(#p21-flareo-flare-legendary-meta-box-ui):not(#p21-flareo-flare-preview-meta-box-ui) {
 	border: 1px solid #E9ECEF !important;
 	box-shadow: none !important;
 	border-radius: 3px !important;
@@ -91,6 +91,24 @@ body.post-type-p21-flareo-flare {
 #poststuff h2 {
 	padding: 18px 18px 10px;
 }
+
+/**
+ * Preview Metabox.
+ */
+ #p21-flareo-flare-preview-meta-box-ui {
+	border: none;
+	box-shadow: none;
+	background-color: transparent;
+	padding: 20px 0;
+
+	.postbox-header {
+		display: none;
+	}
+
+	.p21-flareo-flare.p21-flareo-flare-preview {	
+		text-align: center;
+	}
+ }
 
 /**
 * Legendary Meta Box UI.
@@ -249,6 +267,7 @@ body.post-type-p21-flareo-flare {
 
 #p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .option-group__inputs {
 	flex: 1;
+	max-width: 60%;
 }
 
 #p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .option-group__inputs .option-customized-radio label {
@@ -277,7 +296,9 @@ body.post-type-p21-flareo-flare {
 	margin: 0;
 	padding: 0;
 	display: flex;
-	gap: 30px;
+	row-gap: 10px;
+	column-gap: 20px;
+  flex-wrap: wrap;
 }
 
 #p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul li {
