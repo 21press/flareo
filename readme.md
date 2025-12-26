@@ -98,7 +98,7 @@ define( 'P21_DEBUG', true );
 ## Support
 
 - **Documentation:** See this file and the plugin settings pages
-- **Issues:** [GitHub Issues](https://github.com/jetixwp/really-simple-featured-image/issues)
-- **Email:** support@jetixwp.com
+- **Issues:** [GitHub Issues](https://github.com/21press/flareo/issues)
+- **Email:** support@21press.com
 
 ---
