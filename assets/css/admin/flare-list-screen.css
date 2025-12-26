@@ -1,0 +1,93 @@
+.post-type-p21-flareo-flare .wp-list-table.widefat tbody td,
+.post-type-p21-flareo-flare .wp-list-table.widefat tbody th {
+	padding: 20px 10px;
+}
+
+/* .p21-flareo-flare_status */
+.p21-flareo-flare_status label.switch {
+	cursor: pointer;
+	display: flex;
+	gap: 38px;
+}
+
+.p21-flareo-flare_status label.switch .input-label {
+	font-weight: 600;
+	color: #6c7781;
+}
+
+.p21-flareo-flare_status label.switch input[type="checkbox"]:checked + .slider + .input-label {
+	color: #212529;
+}
+
+/**
+ * Toggle switch control.
+ */
+/* The switch - the box around the slider */
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 48px;
+	height: 22px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 2px solid #6c7781;
+	background-color: transparent;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 14px;
+	width: 14px;
+	left: 3px;
+	bottom: 2px;
+	background-color: #6c7781;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background-color: #212529;
+	border-color: #212529;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(25px);
+	-ms-transform: translateX(25px);
+	transform: translateX(25px);
+	background-color: #fff;
+}
+
+/* Rounded sliders */
+.slider.round {
+	border-radius: 22px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+.p21-flareo-flare_shortcode code {
+	background-color: #212529;
+	color: #fff;
+	padding: 6px;
+	border-radius: 3px;
+	line-height: 2.1;
+}

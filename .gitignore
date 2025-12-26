@@ -1,0 +1,11 @@
+.idea/
+.vscode/
+.DS_Store
+node_modules
+/yarn-error.log
+/build
+/third-party
+phpcs.xml
+gulp.config.json
+report.txt
+flareo.zip

@@ -1,0 +1,32 @@
+{
+  "name": "flareo",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "package": "composer install --no-dev && wp-scripts plugin-zip",
+    "packages-update": "wp-scripts packages-update",
+    "translate": "wp i18n make-pot . ./languages/flareo.pot"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/21press/flareo.git"
+  },
+  "author": "JetixWP",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/21press/flareo/issues"
+  },
+  "homepage": "https://21press.com/plugins/flareo",
+  "devDependencies": {
+    "@wordpress/scripts": "^30.17.0"
+  },
+  "files": [
+    "vendor",
+    "assets",
+    "includes",
+    "languages",
+    "readme.txt",
+    "flareo.php"
+  ]
+}

@@ -1,0 +1,536 @@
+body.post-type-p21-flareo-flare {
+	background-color: #E9ECEF;
+}
+
+.p21-flareo-flare {
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: -apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif;
+	font-size: 15px;
+}
+
+.p21-flareo-flare * {
+	box-sizing: border-box;
+}
+
+.post-type-p21-flareo-flare #titlediv #title {
+	border: none;
+	padding: 26px 16px;
+	border: 1px solid #e9e9e9 !important;
+}
+
+
+.post-type-p21-flareo-flare #titlediv #title-prompt-text {
+	padding: 18px 16px;
+}
+
+.post-type-p21-flareo-flare #titlediv #title:focus,
+.post-type-p21-flareo-flare #titlediv #title:active {
+	border-color: #212529 !important;
+	box-shadow: 0 0 0 1px #212529
+}
+
+#p21_flareo_flareo_flare-sortables {
+	margin-top: 20px;
+}
+
+.post-type-p21-flareo-flare .postbox#p21-flareo-flare-legendary-meta-box-ui {
+	border: 1px solid #E9ECEF !important;
+	padding: 0;
+}
+
+.post-type-p21-flareo-flare .postbox#p21-flareo-flare-legendary-meta-box-ui .inside {
+	padding: 0;
+	margin: 0;
+}
+
+.post-type-p21-flareo-flare .postbox:not(#p21-flareo-flare-legendary-meta-box-ui) {
+	border: 1px solid #E9ECEF !important;
+	box-shadow: none !important;
+	border-radius: 3px !important;
+}
+
+.post-type-p21-flareo-flare .postbox:not(#p21-flareo-flare-legendary-meta-box-ui) .inside {
+	padding: 0 20px 20px;
+}
+
+.post-type-p21-flareo-flare .postbox:not(#p21-flareo-flare-legendary-meta-box-ui) code {
+	background-color: #212529;
+	color: #fff;
+	padding: 6px;
+	border-radius: 3px;
+	line-height: 2.1;
+}
+
+.post-type-p21-flareo-flare .postbox:not(#p21-flareo-flare-legendary-meta-box-ui) .postbox-header {
+	border-bottom: 1px solid #E9ECEF;
+}
+
+.post-type-p21-flareo-flare .postbox .handle-order-higher,
+.post-type-p21-flareo-flare .postbox .handle-order-lower,
+.post-type-p21-flareo-flare .postbox[id^="p21-flareo-flare-"] .handle-actions,
+.post-type-p21-flareo-flare .misc-pub-section:not(.misc-pub-post-status) {
+	display: none;
+}
+
+
+#p21-flareo-flare-publish .toggle-indicator {
+	display: none !important;
+}
+
+.post-type-p21-flareo-flare .postbox .postbox-header .hndle.ui-sortable-handle {
+	pointer-events: none !important;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card-body .display-tools-list {
+	padding: 0 20px 20px;
+}
+
+.post-type-p21-flareo-flare #poststuff h3.hndle,
+.post-type-p21-flareo-flare #poststuff .stuffbox > h3,
+#poststuff h2 {
+	padding: 18px 18px 10px;
+}
+
+/**
+* Legendary Meta Box UI.
+*/
+
+#p21-flareo-flare-legendary-meta-box-ui .postbox-header,
+#authordiv {
+ display: none;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui.postbox {
+	border-radius: 4px !important;
+	border-bottom: 1px solid #e9e9e9 !important;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card {
+	padding: 0;
+	width: 100%;
+	margin-top: 0;
+	max-width: inherit;
+	border: none;
+	border-bottom: 1px solid #e9e9e9;
+	overflow: hidden;
+	transition: background-color 0.3s ease;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card:first-child {
+	border-top-left-radius: 4px;
+	border-top-right-radius: 4px;
+}
+
+
+#p21-flareo-flare-legendary-meta-box-ui .card:last-child {
+	border-bottom-left-radius: 4px;
+	border-bottom-right-radius: 4px;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 18px;
+	cursor: pointer;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card:not(.active) .card-header:hover {
+	background-color: #F8F9FA;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card.active .card-header {
+	background-color: #F8F9FA;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-header h2 {
+	padding: 0;
+	font-size: 16px;
+	font-weight: 600;
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card.active .card-header h2 {
+	color: #111;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-header h2 .card-header__icon {
+	width: 20px;
+	height: 20px;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-header .card-header__toggle-indicator svg {
+	width: 20px;
+	height: 20px;
+	transition: transform 0.3s ease;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card.active .card-header .card-header__toggle-indicator svg {
+	-webkit-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body {
+	padding: 20px;
+	display: none;
+}
+
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body * {
+	font-size: 14px;
+}
+
+/* Tabs UI inside card-body */
+.p21-flareo-tabs {
+	margin-top: 8px;
+}
+.p21-flareo-tabs-nav {
+	display: flex;
+	gap: 8px;
+	margin-bottom: 12px;
+}
+.p21-flareo-tab {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 8px 12px;
+	border-radius: 6px;
+	border: 1px solid transparent;
+	cursor: pointer;
+	background: transparent;
+}
+.p21-flareo-tab[aria-selected="true"] {
+	background: #212529;
+	border-color: #F8F9FA;
+	color: #fff;
+}
+.p21-flareo-tab:focus {
+	outline: 2px solid #ADB5BD;
+	outline-offset: 2px;
+}
+.p21-flareo-tab:hover:not([aria-selected="true"]) {	
+	background: #E9ECEF;
+}
+.p21-flareo-tabs-panel {
+	display: none;
+	padding: 30px 0 4px;
+	border-radius: 6px;
+	background: #fff;
+}
+
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body li {
+	font-weight: 600;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card.active .card-body {
+	display: block;
+}
+
+/** 
+ * Settings Metabox UI.
+ */
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group {
+	display: flex;
+	gap: 40px;
+  align-items: flex-start;
+}
+
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .option-group__title {
+	width: 100%;
+	max-width: 350px;
+	margin: 0;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .option-group__inputs {
+	flex: 1;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .option-group__inputs .option-customized-radio label {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .option-group__inputs .option-customized-radio img {
+	height: 40px;
+	width: auto;
+	margin-bottom: 0;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .option-group__inputs .option-customized-radio h4 {
+	margin: 0;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .option-group__inputs .option-customized-radio label + a {
+	margin-top: 8px;
+	display: inline-block;
+}
+
+/* Style radio inputs in the second card (Flareo Options) as selectable boxes. */
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	gap: 30px;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul li {
+	list-style: none;
+	margin: 8px 0;
+}
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul li label {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	padding: 10px 12px;
+	border: 2px solid #e9e9e9;
+	border-radius: 8px;
+	cursor: pointer;
+	position: relative;
+	transition: background-color 150ms ease, border-color 150ms ease;
+}
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul li label:hover {
+	background-color: #fafafa;
+}
+
+/* Hide native radio control but keep it accessible. */
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul li label input[type="radio"] {
+	position: absolute;
+	opacity: 0;
+	width: 1px;
+	height: 1px;
+	margin: 0;
+	clip: rect(1px, 1px, 1px, 1px);
+	white-space: nowrap;
+}
+
+/* Visual box indicator */
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul li label::before {
+	content: '';
+	display: none;
+}
+
+/* Checked state using :has() to style the label when its input is checked. Modern browsers support :has(). */
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul li label:has(input:checked) {
+	border-color: #212529;
+	background-color: #F8F9FA;
+}
+
+/* Focus styles for keyboard accessibility */
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group ul li label:focus-within {
+	outline: 2px solid #ADB5BD;
+	outline-offset: 2px;
+}
+
+/**
+ * Flare By Type Options.
+ */
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group .flare-by-type__coordinates {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group div[class^="flare-by-type__"] {
+	margin-top: 10px;
+}
+
+#p21-flareo-flare-legendary-meta-box-ui .card .card-body .options-group .option-group div[class^="flare-by-type__"] input {
+	width: 100%;
+	max-width: 300px;
+}
+
+.p21-flareo-flare .metabox-header__title {
+	padding: 0 !important;
+	font-weight: bold !important;
+}
+
+.p21-flareo-flare .metabox-content {
+	padding: 5px 0 20px;
+}
+
+.p21-flareo-flare .metabox-content__row {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+	flex-wrap: wrap;
+}
+
+.p21-flareo-flare .metabox-content__row.action {
+	display: block;
+	margin-top: 10px;
+	text-align: right;
+}
+
+.p21-flareo-flare .metabox-content__row__value {
+	font-weight: 600;
+}
+
+.p21-flareo-flare .metabox-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 0;
+	padding-top: 10px;
+}
+
+.p21-flareo-flare .metabox-footer .metabox-footer__left,
+.p21-flareo-flare .metabox-footer .metabox-footer__right {
+	display: flex;
+	gap: 8px;
+}
+
+.p21-flareo-flare .metabox-footer .metabox-footer__right {
+	text-align: right;
+}
+
+.p21-flareo-flare .metabox-footer .spinner {
+	display: none;
+}
+
+.p21-flareo-flare .textarea {
+	width: 100%;
+}
+
+/* #p21_flareo_flare_active */
+.p21-flareo-flare label.switch[for="p21_flareo_flare_active"] {
+	cursor: pointer;
+	display: flex;
+	gap: 38px;
+}
+
+.p21-flareo-flare label.switch[for="p21_flareo_flare_active"] .input-label {
+	font-weight: 600;
+	color: #6c7781;
+}
+
+.p21-flareo-flare label.switch[for="p21_flareo_flare_active"] input[type="checkbox"]:checked + .slider + .input-label {
+	color: #212529;
+}
+
+/**
+ * Toggle switch control.
+ */
+/* The switch - the box around the slider */
+.p21-flareo-flare .switch {
+	position: relative;
+	display: inline-block;
+	width: 48px;
+	height: 22px;
+}
+
+/* Hide default HTML checkbox */
+.p21-flareo-flare .switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+/* The slider */
+.p21-flareo-flare.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	border: 2px solid #6c7781;
+	background-color: transparent;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.p21-flareo-flare .slider:before {
+	position: absolute;
+	content: "";
+	height: 14px;
+	width: 14px;
+	left: 3px;
+	bottom: 2px;
+	background-color: #6c7781;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+.p21-flareo-flare input:checked + .slider {
+	background-color: #212529;
+	border-color: #212529;
+}
+
+.p21-flareo-flare input:checked + .slider:before {
+	-webkit-transform: translateX(25px);
+	-ms-transform: translateX(25px);
+	transform: translateX(25px);
+	background-color: #fff;
+}
+
+/* Rounded sliders */
+.p21-flareo-flare .slider.round {
+	border-radius: 22px;
+}
+
+.p21-flareo-flare .slider.round:before {
+	border-radius: 50%;
+}
+
+/**
+ * Sale Publish Metabox.
+ */
+#p21-flareo-flare-publish .p21-flareo-flare-publish-metabox .metabox-content__row__value {
+	flex: 1;
+	width: 100%;
+}
+
+#p21-flareo-flare-publish .p21-flareo-flare-publish-metabox select {
+	width: 100%;
+}
+
+/**
+ * Form fields.
+ */
+.p21-flareo-flare .option-group {
+	margin-bottom: 30px;
+
+	input[type="text"],
+	input[type="number"],
+	input[type="email"],
+	input[type="url"],
+	select,
+	textarea {
+		width: 100%;
+		padding: 8px 12px;
+		border: 1px solid #DEE2E6;
+		border-radius: 4px;
+		font-size: 16px;
+		color: #212529;
+
+		&:focus,
+		&:active {
+			border-color: #212529;
+			box-shadow: 0 0 0 1px #212529;
+			outline: none;
+		}
+	}
+
+	.switch {
+		display: flex;
+		gap: 38px;
+		align-items: center;
+
+		.input-label {
+			font-weight: 600;
+			color: #6c7781;
+		}
+
+		input[type="checkbox"]:checked + .slider + .input-label {
+			color: #212529;
+		}
+	}
+}
