@@ -8,6 +8,7 @@
 namespace P21\Flareo\Core\PostType;
 
 use P21\Flareo\Utils\Has_Instance;
+use P21\Flareo\Core\PostType\Flare_Post_Type;
 
 /**
  * Class Flare_Post_Metabox
@@ -79,12 +80,13 @@ class Flare_Post_Metabox {
 				$field_id = isset( $field['id'] ) ? $field['id'] : '';
 
 				// Jump to next if id is empty or type is invalid.
-				if ( empty( $field_id ) || ! in_array( $type, array( 'hidden', 'text', 'number', 'select', 'checkbox', 'radio', 'ext-radio' ), true ) ) {
+				if ( empty( $field_id ) || ! in_array( $type, array( 'hidden', 'text', 'number', 'select', 'checkbox', 'radio', 'ext-radio', 'shortcode' ), true ) ) {
 					continue;
 				}
 
 				$label         = isset( $field['label'] ) ? $field['label'] : '';
 				$desc          = isset( $field['desc'] ) ? $field['desc'] : '';
+				$type          = isset( $field['type'] ) ? $field['type'] : 'text';
 				$placeholder   = isset( $field['placeholder'] ) ? $field['placeholder'] : '';
 				$options       = isset( $field['options'] ) ? $field['options'] : array();
 				$default_value = isset( $field['default'] ) ? $field['default'] : '';
@@ -100,10 +102,12 @@ class Flare_Post_Metabox {
 							<?php
 							switch ( $type ) {
 								case 'text':
+								case 'number':
+								case 'email':
 									?>
 									<div>
 										<input
-												type="text"
+												type="<?php echo esc_attr( $type ); ?>"
 												name="<?php echo esc_attr( $field_id ); ?>"
 												id="<?php echo esc_attr( $field_id ); ?>"
 												value="<?php echo esc_attr( $saved_value ); ?>"
@@ -199,6 +203,21 @@ class Flare_Post_Metabox {
 									</ul>
 									<?php
 									break;
+								case 'shortcode':
+									?>
+									<div>
+											<input
+													type="text"
+													name="<?php echo esc_attr( $field_id ); ?>"
+													id="<?php echo esc_attr( $field_id ); ?>"
+													value="<?php echo esc_attr( $saved_value ); ?>"
+													placeholder="<?php echo esc_attr( $placeholder ); ?>"
+													readonly
+											/>
+											<button type="button" class="p21-flareo-button p21-flareo-button-secondary p21-flareo-copy-target button button-secondary" data-target="#<?php echo esc_attr( $field_id ); ?>"><span class="p21-flareo-default-icon"><svg class="p21-flareo-icon p21-flareo-icon-copy" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id=""><path d="M10.8125 1.125H3.3125C2.625 1.125 2.0625 1.6875 2.0625 2.375V11.125H3.3125V2.375H10.8125V1.125ZM12.6875 3.625H5.8125C5.125 3.625 4.5625 4.1875 4.5625 4.875V13.625C4.5625 14.3125 5.125 14.875 5.8125 14.875H12.6875C13.375 14.875 13.9375 14.3125 13.9375 13.625V4.875C13.9375 4.1875 13.375 3.625 12.6875 3.625ZM12.6875 13.625H5.8125V4.875H12.6875V13.625Z" fill="currentColor"></path></svg></span><span class="p21-flareo-success-icon"><svg class="p21-flareo-icon p21-flareo-icon-check" width="14" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg" id=""><path d="M5.8002 10.9L1.6002 6.70005L0.200195 8.10005L5.8002 13.7L17.8002 1.70005L16.4002 0.300049L5.8002 10.9Z" fill="currentColor"></path></svg></span><?php esc_html_e( 'Copy', 'flareo' ); ?></button>
+									</div>
+									<?php
+									break;
 							}
 							?>
 							<p><?php echo wp_kses_post( $desc ); ?></p>
@@ -223,9 +242,29 @@ class Flare_Post_Metabox {
 			return;
 		}
 
+		// Preview section.
+		add_meta_box(
+			'p21-flareo-flare-preview-meta-box-ui',
+			esc_attr__( 'Flare Preview', 'flareo' ),
+			function ( $flare ) {
+				ob_start();
+				?>
+				<div id="p21-flareo-flare-preview-ui" class="p21-flareo-flare p21-flareo-flare-preview">
+					<p><?php esc_html_e( 'Press the button to see a preview of the flare based on the selected options and styles.', 'flareo' ); ?></p>
+					<button type="button" class="button button-primary" id="p21-flareo-flare-preview-button"><?php esc_html_e( 'Preview Flare', 'flareo' ); ?></button>
+				</div>
+				<?php
+				// HTML is included. Ignoring!
+				echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			},
+			Flare_Post_Type::CPT_KEY,
+			'p21_flareo_flare',
+			'high'
+		);
+
 		add_meta_box(
 			'p21-flareo-flare-legendary-meta-box-ui',
-			esc_attr__( 'Type and Style', 'flareo' ),
+			esc_attr__( 'Flare Options', 'flareo' ),
 			function ( $flare ) {
 				$all_fields = Flare_Post_Fields::get_all();
 
@@ -289,7 +328,7 @@ class Flare_Post_Metabox {
 				// HTML is included. Ignoring!
 				echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			},
-			'p21-flareo-flare',
+			Flare_Post_Type::CPT_KEY,
 			'p21_flareo_flare',
 			'high'
 		);
@@ -332,26 +371,7 @@ class Flare_Post_Metabox {
 				// HTML is included ignoring.
 				echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			},
-			'p21-flareo-flare',
-			'side',
-			'default'
-		);
-
-		add_meta_box(
-			'p21-flareo-flare-shortcode',
-			esc_attr__( 'Shortcode', 'flareo' ),
-			function ( $flare ) {
-				ob_start();
-				?>
-				<div id="p21-flareo-flare-shortcode-metabox" class="p21-flareo-flare p21-flareo-flare-shortcode-metabox">
-						<p>Use the shortcode below to display this flare anywhere on your site.</p>
-						<div><code>[p21_flareo_flare id="<?php echo esc_attr( $flare->ID ); ?>"]</code></div>
-				</div>
-				<?php
-				// HTML is included ignoring.
-				echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-			},
-			'p21-flareo-flare',
+			Flare_Post_Type::CPT_KEY,
 			'side',
 			'default'
 		);
@@ -378,7 +398,7 @@ class Flare_Post_Metabox {
 				// HTML is included ignoring.
 				echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			},
-			'p21-flareo-flare',
+			Flare_Post_Type::CPT_KEY,
 			'side',
 			'default'
 		);
@@ -406,7 +426,7 @@ class Flare_Post_Metabox {
 			return;
 		}
 
-		if ( ! empty( $_POST ) && isset( $_POST['post_type'] ) && 'p21-flareo-flare' === $_POST['post_type'] ) {
+		if ( ! empty( $_POST ) && isset( $_POST['post_type'] ) && Flare_Post_Type::CPT_KEY === $_POST['post_type'] ) {
 
 			// Get all default fields.
 			$default_fields = $this->default_fields;
@@ -448,6 +468,8 @@ class Flare_Post_Metabox {
 			foreach ( $flare_meta_fields as $field ) {
 				// For processing and sanitizing multiple data types.
 				switch ( $field['type'] ) {
+					case 'shortcode':
+						continue 2;
 					case 'checkbox':
 						$field_value = isset( $_POST[ $field['id'] ] ) ? sanitize_text_field( wp_unslash( $_POST[ $field['id'] ] ) ) : false;
 						$field_value = Flare_Post_Utilities::sanitize_bool( $field_value );
@@ -473,7 +495,7 @@ class Flare_Post_Metabox {
 	 * @return void
 	 */
 	public function update_status( $flare_id, $post ) {
-		if ( 'p21-flareo-flare' !== (string) $post->post_type ) {
+		if ( Flare_Post_Type::CPT_KEY !== (string) $post->post_type ) {
 			return;
 		}
 		if ( 'publish' === (string) $post->post_status ) {

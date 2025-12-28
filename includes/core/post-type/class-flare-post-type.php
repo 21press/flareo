@@ -8,12 +8,15 @@
 namespace P21\Flareo\Core\PostType;
 
 use P21\Flareo\Utils\Has_Instance;
+use P21\Flareo\Core\PostType\Flare_Post_Fields;
 
 /**
  * Class Flare_Post_Type
  */
 class Flare_Post_Type {
 	use Has_Instance;
+
+	const CPT_KEY = 'p21-flareo-flare';
 
 	/**
 	 * Class constructor.
@@ -44,7 +47,7 @@ class Flare_Post_Type {
 	 */
 	public function flare_post_type() {
 
-		if ( ! post_type_exists( 'p21-flareo-flare' ) ) {
+		if ( ! post_type_exists( self::CPT_KEY ) ) {
 			$labels = array(
 				'name'                  => esc_attr__( 'Flareo Flares', 'flareo' ),
 				'singular_name'         => esc_attr__( 'Flare', 'flareo' ),
@@ -112,7 +115,7 @@ class Flare_Post_Type {
 				),
 			);
 
-			register_post_type( 'p21-flareo-flare', apply_filters( 'p21_flareo_post_type_flare_args', $args ) );
+			register_post_type( self::CPT_KEY, apply_filters( 'p21_flareo_post_type_flare_args', $args ) );
 		}
 	}
 
@@ -125,8 +128,8 @@ class Flare_Post_Type {
 	public function menu_highlight( $parent_file ) {
 		global $plugin_page, $post_type;
 
-		if ( 'p21-flareo-flare' === $post_type ) {
-			$plugin_page = 'edit.php?post_type=p21-flareo-flare'; // phpcs:ignore.
+		if ( self::CPT_KEY === $post_type ) {
+			$plugin_page = 'edit.php?post_type=' . self::CPT_KEY; // phpcs:ignore.
 		}
 
 		return $parent_file;
@@ -137,12 +140,12 @@ class Flare_Post_Type {
 	 *
 	 * @param int      $post_ID Post ID.
 	 * @param \WP_Post $post Post object.
-	 * @param mixed    $update Unaccounted param.
+	 * @param mixed    $update Unaccounted param. (Kept for later use if needed).
 	 *
 	 * @return void
 	 */
 	public function change_default_post_status( $post_ID, $post, $update ) {
-		if ( 'p21-flareo-flare' !== (string) $post->post_type ) {
+		if ( self::CPT_KEY !== (string) $post->post_type ) {
 			return;
 		}
 
@@ -163,7 +166,7 @@ class Flare_Post_Type {
 	 * @return void
 	 */
 	public function remove_publish_box() {
-		remove_meta_box( 'submitdiv', 'p21-flareo-flare', 'side' );
+		remove_meta_box( 'submitdiv', self::CPT_KEY, 'side' );
 	}
 
 	/**
@@ -200,10 +203,6 @@ class Flare_Post_Type {
 			return;
 		}
 
-		// Register scripts here.
-		wp_register_style( 'p21-flareo-flare-list-screen', P21_FLAREO_URL . '/assets/css/admin/flare-list-screen.css', array(), filemtime( P21_FLAREO_DIR . '/assets/css/admin/flare-list-screen.css' ) );
-		wp_register_script( 'p21-flareo-flare-list-screen', P21_FLAREO_URL . '/assets/js/admin/flare-list-screen.js', array(), filemtime( P21_FLAREO_DIR . '/assets/js/admin/flare-list-screen.js' ), true );
-
 		// Attach scripts here.
 		wp_enqueue_style( 'p21-flareo-flare-list-screen' );
 		wp_enqueue_script( 'p21-flareo-flare-list-screen' );
@@ -220,6 +219,9 @@ class Flare_Post_Type {
 				),
 			)
 		);
+
+		// Custom action hook for further extension.
+		do_action( 'p21_flareo_enqueue_flare_list_screen_scripts', $hook, $screen );
 	}
 
 	/**
@@ -234,17 +236,16 @@ class Flare_Post_Type {
 		if ( 'post-new.php' !== $hook && 'post.php' !== $hook ) {
 			return;
 		}
-		if ( 'p21-flareo-flare' !== (string) get_post_type() ) {
+		if ( self::CPT_KEY !== (string) get_post_type() ) {
 			return;
 		}
-
-		// Register scripts here.
-		wp_register_style( 'p21-flareo-flare-edit-screen', P21_FLAREO_URL . '/assets/css/admin/edit-flare-screen.css', array( 'wp-color-picker' ), filemtime( P21_FLAREO_DIR . '/assets/css/admin/edit-flare-screen.css' ) );
-		wp_register_script( 'p21-flareo-flare-edit-screen', P21_FLAREO_URL . '/assets/js/admin/edit-flare-screen.js', array( 'jquery', 'wp-color-picker' ), filemtime( P21_FLAREO_DIR . '/assets/js/admin/edit-flare-screen.js' ), true );
 
 		// Attach scripts here.
 		wp_enqueue_style( 'p21-flareo-flare-edit-screen' );
 		wp_enqueue_script( 'p21-flareo-flare-edit-screen' );
+
+		// Custom action hook for further extension.
+		do_action( 'p21_flareo_enqueue_flare_edit_screen_scripts', $hook );
 	}
 
 	/**
@@ -259,9 +260,10 @@ class Flare_Post_Type {
 
 		foreach ( $columns as $key => $column ) {
 			if ( 'title' === $key ) {
-				$updated_columns[ $key ]      = $column;
-				$updated_columns['status']    = esc_attr__( 'Status', 'flareo' );
-				$updated_columns['shortcode'] = esc_attr__( 'Shortcode', 'flareo' );
+				$updated_columns[ $key ]          = $column;
+				$updated_columns['status']        = esc_attr__( 'Status', 'flareo' );
+				$updated_columns['insert-method'] = esc_attr__( 'Insert Method', 'flareo' );
+				$updated_columns['priority']      = esc_attr__( 'Priority', 'flareo' );
 			} elseif ( in_array( $key, array( 'cb' ), true ) ) {
 				$updated_columns[ $key ] = $column;
 			}
@@ -281,7 +283,7 @@ class Flare_Post_Type {
 	public function display_custom_column_data( $column, $post_id ) {
 		switch ( $column ) {
 			case 'status':
-				$is_active = get_post_meta( $post_id, 'p21_flareo_flare_active', true );
+				$is_active = Flare_Post_Fields::get_field_value( $post_id, 'p21_flareo_flare_active' );
 				?>
 				<div class="p21-flareo-flare_status">
 					<div>
@@ -302,12 +304,36 @@ class Flare_Post_Type {
 				<?php
 
 				break;
-			case 'shortcode':
-				?>
+			case 'insert-method':
+				$insert_method = Flare_Post_Fields::get_field_value( $post_id, 'p21_flareo_flare_insert_method' );
+
+				if ( 'auto-insert' === $insert_method ) {
+					$insert_method_label = __( 'Auto Insert', 'flareo' );
+
+					$auto_insert_locations = Flare_Post_Fields::get_field_value( $post_id, 'p21_flareo_flare_method_auto_insert_locations' );
+
+					$insert_method_label .= ' - ' . ucfirst( str_replace( '-', ' ', $auto_insert_locations ) );
+				} elseif ( 'shortcode' === $insert_method ) {
+					$insert_method_label = __( 'Shortcode', 'flareo' );
+				} else {
+					$insert_method_label = __( 'N/A', 'flareo' );
+				}
+
+				echo '<p>' . esc_html( $insert_method_label ) . '</p>';
+
+				if ( 'shortcode' === $insert_method ) :
+					?>
 				<div class="p21-flareo-flare_shortcode">
-					<p>
-						<code>[p21_flareo_flare id="<?php echo esc_attr( $post_id ); ?>"]</code>
-					</p>
+					<input type="text" readonly value="[p21_flareo_flare id=&quot;<?php echo esc_attr( $post_id ); ?>&quot;]" id="flare-shortcode-<?php echo esc_attr( $post_id ); ?>" />
+					<button type="button" class="p21-flareo-button p21-flareo-button-secondary p21-flareo-copy-target button button-secondary" data-target="#flare-shortcode-<?php echo esc_attr( $post_id ); ?>"><span class="p21-flareo-default-icon"><svg class="p21-flareo-icon p21-flareo-icon-copy" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" id=""><path d="M10.8125 1.125H3.3125C2.625 1.125 2.0625 1.6875 2.0625 2.375V11.125H3.3125V2.375H10.8125V1.125ZM12.6875 3.625H5.8125C5.125 3.625 4.5625 4.1875 4.5625 4.875V13.625C4.5625 14.3125 5.125 14.875 5.8125 14.875H12.6875C13.375 14.875 13.9375 14.3125 13.9375 13.625V4.875C13.9375 4.1875 13.375 3.625 12.6875 3.625ZM12.6875 13.625H5.8125V4.875H12.6875V13.625Z" fill="currentColor"></path></svg></span><span class="p21-flareo-success-icon"><svg class="p21-flareo-icon p21-flareo-icon-check" width="14" viewBox="0 0 16 13" fill="none" xmlns="http://www.w3.org/2000/svg" id=""><path d="M5.8002 10.9L1.6002 6.70005L0.200195 8.10005L5.8002 13.7L17.8002 1.70005L16.4002 0.300049L5.8002 10.9Z" fill="currentColor"></path></svg></span><?php esc_html_e( 'Copy', 'flareo' ); ?></button>
+				</div>
+					<?php
+				endif;
+				break;
+			case 'priority':
+				?>
+				<div class="p21-flareo-flare_priority">
+					<p><?php echo esc_html( Flare_Post_Fields::get_field_value( $post_id, 'p21_flareo_flare_method_auto_insert_priority' ) ); ?></p>
 				</div>
 				<?php
 				break;
@@ -354,8 +380,8 @@ class Flare_Post_Type {
 	 * @param string $messages give custom notice of publish and update.
 	 */
 	public function admin_publish_update_notice( $messages ) {
-		$messages['p21-flareo-flare'][6] = __( 'Flareo flare has been published.', 'flareo' );
-		$messages['p21-flareo-flare'][1] = __( 'Flareo flare updated.', 'flareo' );
+		$messages[ self::CPT_KEY ][6] = __( 'Flareo flare has been published.', 'flareo' );
+		$messages[ self::CPT_KEY ][1] = __( 'Flareo flare updated.', 'flareo' );
 		return $messages;
 	}
 }
