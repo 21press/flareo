@@ -31,13 +31,6 @@ define( 'P21_FLAREO_DIR', plugin_dir_path( P21_FLAREO_FILE ) );
 define( 'P21_FLAREO_BASE', plugin_basename( P21_FLAREO_FILE ) );
 define( 'P21_FLAREO_WEBSITE_URL', 'https://21press.com/plugins/flareo' );
 
-// Third party dependencies.
-$p21_flareo_vendor_autoload = __DIR__ . '/vendor/autoload.php';
-
-if ( is_readable( $p21_flareo_vendor_autoload ) ) {
-	require_once $p21_flareo_vendor_autoload;
-}
-
 add_action(
 	'plugins_loaded',
 	function () {

@@ -59,13 +59,13 @@ class Admin_Settings {
 	 * Save the settings.
 	 */
 	public static function save() {
-		global $current_tab;
+		global $p21_flareo_settings_current_tab;
 
 		check_admin_referer( 'p21-flareo-settings' );
 
 		// Trigger actions.
-		do_action( 'p21_flareo_settings_save_' . $current_tab );
-		do_action( 'p21_flareo_update_options_' . $current_tab );
+		do_action( 'p21_flareo_settings_save_' . $p21_flareo_settings_current_tab );
+		do_action( 'p21_flareo_update_options_' . $p21_flareo_settings_current_tab );
 		do_action( 'p21_flareo_update_options' );
 
 		self::add_message( __( 'Your settings have been saved.', 'flareo' ) );
@@ -115,7 +115,7 @@ class Admin_Settings {
 	 * Handles the display of the main Flareo Flare settings page in admin.
 	 */
 	public static function output() {
-		global $current_section, $current_tab;
+		global $p21_flareo_settings_current_section, $p21_flareo_settings_current_tab;
 
 		$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 

@@ -96,7 +96,7 @@ class Register_Settings {
 	 * @return void
 	 */
 	public function save_settings() {
-		global $current_tab, $current_section;
+		global $p21_flareo_settings_current_tab, $p21_flareo_settings_current_section;
 
 		// We should only save on the settings page.
 		if ( ! is_admin() || ! isset( $_GET['page'] ) || 'p21-flareo-settings' !== $_GET['page'] ) {
@@ -107,15 +107,15 @@ class Register_Settings {
 		Admin_Settings::get_settings_pages();
 
 		// Get current tab/section.
-		$current_tab     = empty( $_GET['tab'] ) ? 'general' : sanitize_title( wp_unslash( $_GET['tab'] ) );
-		$current_section = empty( $_REQUEST['section'] ) ? '' : sanitize_title( wp_unslash( $_REQUEST['section'] ) );
-		$nonce           = isset( $_POST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) : '';
+		$p21_flareo_settings_current_tab     = empty( $_GET['tab'] ) ? 'general' : sanitize_title( wp_unslash( $_GET['tab'] ) );
+		$p21_flareo_settings_current_section = empty( $_REQUEST['section'] ) ? '' : sanitize_title( wp_unslash( $_REQUEST['section'] ) );
+		$nonce                               = isset( $_POST['_wpnonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_wpnonce'] ) ) : '';
 
 		// Save settings if data has been posted.
 		if ( wp_verify_nonce( $nonce, 'p21-flareo-settings' ) ) {
-			if ( '' !== $current_section && apply_filters( "p21_flareo_save_settings_{$current_tab}_{$current_section}", ! empty( $_POST['save'] ) ) ) {
+			if ( '' !== $p21_flareo_settings_current_section && apply_filters( "p21_flareo_save_settings_{$p21_flareo_settings_current_tab}_{$p21_flareo_settings_current_section}", ! empty( $_POST['save'] ) ) ) {
 				Admin_Settings::save();
-			} elseif ( '' === $current_section && apply_filters( "p21_flareo_save_settings_{$current_tab}", ! empty( $_POST['save'] ) ) ) {
+			} elseif ( '' === $p21_flareo_settings_current_section && apply_filters( "p21_flareo_save_settings_{$p21_flareo_settings_current_tab}", ! empty( $_POST['save'] ) ) ) {
 				Admin_Settings::save();
 			}
 		}

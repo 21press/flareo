@@ -29,16 +29,16 @@ class General extends Settings_Page {
 	/**
 	 * Get settings array.
 	 *
-	 * @param string $current_section Current section ID.
+	 * @param string $p21_flareo_settings_current_section Current section ID.
 	 *
 	 * @return array
 	 */
-	public function get_settings( $current_section = '' ) {
-		global $current_section;
+	public function get_settings( $p21_flareo_settings_current_section = '' ) {
+		global $p21_flareo_settings_current_section;
 
 		$settings = array();
 
-		if ( '' === $current_section ) {
+		if ( '' === $p21_flareo_settings_current_section ) {
 
 			$settings = array(
 				array(

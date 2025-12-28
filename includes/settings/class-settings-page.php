@@ -95,7 +95,7 @@ abstract class Settings_Page {
 	 * Output sections.
 	 */
 	public function output_sections() {
-		global $current_section;
+		global $p21_flareo_settings_current_section;
 
 		$sections = $this->get_sections();
 
@@ -108,7 +108,7 @@ abstract class Settings_Page {
 		$array_keys = array_keys( $sections );
 
 		foreach ( $sections as $id => $label ) {
-			echo '<li><a href="' . esc_url( admin_url( 'admin.php?page=p21-flareo-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) ) ) . '" class="' . ( $current_section === $id ? 'current' : '' ) . '">' . esc_html( $label ) . '</a> ' . ( end( $array_keys ) === $id ? '' : '|' ) . ' </li>';
+			echo '<li><a href="' . esc_url( admin_url( 'admin.php?page=p21-flareo-settings&tab=' . $this->id . '&section=' . sanitize_title( $id ) ) ) . '" class="' . ( $p21_flareo_settings_current_section === $id ? 'current' : '' ) . '">' . esc_html( $label ) . '</a> ' . ( end( $array_keys ) === $id ? '' : '|' ) . ' </li>';
 		}
 
 		echo '</ul><br class="clear" />';
@@ -127,13 +127,13 @@ abstract class Settings_Page {
 	 * Save settings.
 	 */
 	public function save() {
-		global $current_section;
+		global $p21_flareo_settings_current_section;
 
 		$settings = $this->get_settings();
 		Admin_Settings::save_fields( $settings );
 
-		if ( $current_section ) {
-			do_action( 'p21_flareo_update_options_' . $this->id . '_' . $current_section );
+		if ( $p21_flareo_settings_current_section ) {
+			do_action( 'p21_flareo_update_options_' . $this->id . '_' . $p21_flareo_settings_current_section );
 		}
 	}
 }

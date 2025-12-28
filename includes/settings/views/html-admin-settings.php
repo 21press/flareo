@@ -11,8 +11,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-$tab_exists        = isset( $tabs[ $current_tab ] ) || has_action( 'p21_flareo_sections_' . $current_tab ) || has_action( 'p21_flareo_settings_' . $current_tab ) || has_action( 'p21_flareo_settings_tabs_' . $current_tab );
-$current_tab_label = $tabs[ $current_tab ] ?? '';
+/**
+ * Note for reviewer: This is a false positive! The variable $tab_exists is not a global variable. This is a template file which gets included inside Admin_Settings::output class method.
+ */
+// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+$tab_exists                            = isset( $tabs[ $p21_flareo_settings_current_tab ] ) || has_action( 'p21_flareo_sections_' . $p21_flareo_settings_current_tab ) || has_action( 'p21_flareo_settings_' . $p21_flareo_settings_current_tab ) || has_action( 'p21_flareo_settings_tabs_' . $p21_flareo_settings_current_tab );
+$p21_flareo_settings_current_tab_label = $tabs[ $p21_flareo_settings_current_tab ] ?? '';
 
 global $current_user;
 
@@ -21,7 +25,7 @@ if ( ! $tab_exists ) {
 	exit;
 }
 ?>
-<div class="wrap p21-flareo <?php echo esc_attr( $current_tab ); ?>">
+<div class="wrap p21-flareo <?php echo esc_attr( $p21_flareo_settings_current_tab ); ?>">
 
 	<div class="header-hero">
 		<h1 class="menu-title"><?php esc_html_e( 'Flareo Settings', 'flareo' ); ?></h1>
@@ -29,12 +33,16 @@ if ( ! $tab_exists ) {
 	</div>
 
 	<div class="p21-flareo-wrapper">
-		<form method="<?php echo esc_attr( apply_filters( 'p21_flareo_settings_form_method_tab_' . $current_tab, 'post' ) ); ?>" id="mainform" action="" enctype="multipart/form-data">
+		<form method="<?php echo esc_attr( apply_filters( 'p21_flareo_settings_form_method_tab_' . $p21_flareo_settings_current_tab, 'post' ) ); ?>" id="mainform" action="" enctype="multipart/form-data">
 			<nav class="nav-tab-wrapper p21-flareo-nav-tab-wrapper">
 				<?php
 
+				/**
+				 * Note for reviewer: This is a false positive! The variables $slug & $label are not global variables. This is a template file which gets included inside Admin_Settings::output class method.
+				 */
+					// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 				foreach ( $tabs as $slug => $label ) {
-					echo '<a href="' . esc_html( admin_url( 'edit.php?post_type=p21-flareo-flare&page=p21-flareo-settings&tab=' . esc_attr( $slug ) ) ) . '" class="p21-flareo-nav-tab ' . ( $current_tab === $slug ? 'p21-flareo-nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
+					echo '<a href="' . esc_html( admin_url( 'edit.php?post_type=p21-flareo-flare&page=p21-flareo-settings&tab=' . esc_attr( $slug ) ) ) . '" class="p21-flareo-nav-tab ' . ( $p21_flareo_settings_current_tab === $slug ? 'p21-flareo-nav-tab-active' : '' ) . '">' . esc_html( $label ) . '</a>';
 				}
 
 				do_action( 'p21_flareo_settings_tabs' );
@@ -42,13 +50,13 @@ if ( ! $tab_exists ) {
 				?>
 			</nav>
 			<div class="tab-content">
-				<h1 class="screen-reader-text"><?php echo esc_html( $current_tab_label ); ?></h1>
+				<h1 class="screen-reader-text"><?php echo esc_html( $p21_flareo_settings_current_tab_label ); ?></h1>
 				<?php
-					do_action( 'p21_flareo_sections_' . $current_tab );
+					do_action( 'p21_flareo_sections_' . $p21_flareo_settings_current_tab );
 
 					self::show_messages();
 
-					do_action( 'p21_flareo_settings_' . $current_tab );
+					do_action( 'p21_flareo_settings_' . $p21_flareo_settings_current_tab );
 				?>
 				<p class="submit">
 					<?php if ( empty( $GLOBALS['hide_save_button'] ) ) : ?>
@@ -88,7 +96,7 @@ if ( ! $tab_exists ) {
 					</div>
 
 					<div>
-						<a class="button button-secondary" href="<?php echo admin_url( 'edit.php?post_type=p21-flareo-flare&page=p21-flareo-settings-contact' ); ?>">Create a Support Request</a>
+						<a class="button button-secondary" href="<?php echo esc_url( admin_url( 'edit.php?post_type=p21-flareo-flare&page=p21-flareo-settings-contact' ) ); ?>">Create a Support Request</a>
 					</div>
 				</div>
 
