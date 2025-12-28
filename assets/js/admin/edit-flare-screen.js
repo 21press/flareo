@@ -1,8 +1,6 @@
 /**
  * Edit Flare screen scripts.
  *
- * { jQuery }
-})( jQuery );
  * @package P21WL
  */
 
@@ -151,6 +149,36 @@
 			}
 
 			initP21WLTabs( $( document ) );
+
+			function initCopyHandler(options = {}) {
+					const {
+							selector = '.p21-flareo-copy-target',
+							successClass = 'p21-flareo-show-success-icon',
+							timeout = 500
+					} = options;
+
+					jQuery(document).on('click', selector, function (e) {
+
+							const $button = jQuery(this);
+							const target  = $button.data('target');
+							const prefix  = $button.data('prefix') || '';
+							const suffix  = $button.data('suffix') || '';
+							const value   = target ? jQuery(target).val() : '';
+
+							if (!value) {
+									return;
+							}
+
+							navigator.clipboard.writeText(prefix + value + suffix);
+
+							$button.addClass(successClass);
+							setTimeout(() => {
+									$button.removeClass(successClass);
+							}, timeout);
+					});
+			}
+
+			initCopyHandler();
 		}
 	);
 })( jQuery );

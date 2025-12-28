@@ -84,10 +84,40 @@ input:checked + .slider:before {
 	border-radius: 50%;
 }
 
-.p21-flareo-flare_shortcode code {
-	background-color: #212529;
-	color: #fff;
-	padding: 6px;
-	border-radius: 3px;
-	line-height: 2.1;
+.p21-flareo-flare_shortcode {
+	display: flex;
+	gap: 8px;
+	
+	input {
+		padding: 6px 10px;
+		border-radius: 3px;
+		line-height: 2.1;
+		width: 60%;
+	}
+
+	.p21-flareo-copy-target {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 4px;
+		width: 100px;
+
+		& > span {
+			font-size: 0px !important;
+		}
+		.p21-flareo-success-icon {
+			display: none;
+		}
+
+
+		&.p21-flareo-show-success-icon {
+			.p21-flareo-success-icon {
+				display: inline-block;
+			}
+
+			.p21-flareo-default-icon {
+				display: none;
+			}
+		}
+	}
 }
