@@ -1,0 +1,452 @@
+# Copyright (C) 2025 21Press
+# This file is distributed under the GPL2.
+msgid ""
+msgstr ""
+"Project-Id-Version: Flareo 0.1.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flareo\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2025-12-28T16:42:16+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.10.0\n"
+"X-Domain: flareo\n"
+
+#. Plugin Name of the plugin
+#: flareo.php
+#: includes/core/post-type/class-flare-post-type.php:56
+msgid "Flareo"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: flareo.php
+msgid "https://github.com/21press/flareo/"
+msgstr ""
+
+#. Description of the plugin
+#: flareo.php
+msgid "Add beautiful effects to your WordPress Site — just plug and play."
+msgstr ""
+
+#. Author of the plugin
+#: flareo.php
+msgid "21Press"
+msgstr ""
+
+#. Author URI of the plugin
+#: flareo.php
+msgid "https://21Press.com/"
+msgstr ""
+
+#. translators: %s: version number
+#: flareo.php:48
+msgid "Flareo requires PHP version %s"
+msgstr ""
+
+#: flareo.php:49
+msgid "Error Activating"
+msgstr ""
+
+#: includes/class-plugin.php:87
+#: includes/settings/class-register-settings.php:45
+msgid "Settings"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:25
+msgid "Type & Presets"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:29
+msgid "Flare Type"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:33
+msgid "Presets"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:38
+msgid "Preset Type"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:42
+msgid "Confetti"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:43
+msgid "Stars"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:44
+msgid "Hearts"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:45
+msgid "Snow"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:46
+msgid "Lightning"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:47
+msgid "Sparkles"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:48
+msgid "Meteor"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:57
+msgid "Preset Style"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:61
+msgid "Center Cannon"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:62
+msgid "Side Cannon"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:63
+msgid "Bottom Cannon"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:64
+msgid "Center Fountain"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:65
+msgid "Side Fountain"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:66
+msgid "Bottom Fountain"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:67
+msgid "Random Direction"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:68
+msgid "Fireworks"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:69
+msgid "Burst"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:70
+msgid "Falling"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:71
+msgid "Meteor Shower"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:82
+msgid "Insert & Trigger"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:86
+#: includes/core/post-type/class-flare-post-fields.php:90
+#: includes/core/post-type/class-flare-post-type.php:267
+msgid "Insert Method"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:94
+#: includes/core/post-type/class-flare-post-type.php:313
+msgid "Auto Insert"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:95
+#: includes/core/post-type/class-flare-post-fields.php:100
+#: includes/core/post-type/class-flare-post-type.php:319
+msgid "Shortcode"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:110
+msgid "Location"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:114
+msgid "Run Everywhere"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:115
+msgid "Admin Only"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:116
+msgid "Front Only"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:125
+#: includes/core/post-type/class-flare-post-type.php:268
+msgid "Priority"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:127
+msgid "Set priority e.g. 10"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:138
+msgid "Trigger"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:142
+msgid "Trigger Method"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:146
+msgid "On Page-Load"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:147
+msgid "On Click"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:152
+msgid "Add Delay"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:155
+#: includes/core/post-type/class-flare-post-fields.php:179
+msgid "Enable"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:159
+msgid "Delay (ms)"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:170
+msgid "Enter CSS Target Selectors"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:172
+msgid ".my-class,#my-id"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-fields.php:176
+msgid "Trigger Flare at the Target Selector Area"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:152
+msgid "Show"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:219
+#: includes/core/post-type/class-flare-post-type.php:330
+msgid "Copy"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:250
+msgid "Flare Preview"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:255
+msgid "Press the button to see a preview of the flare based on the selected options and styles."
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:256
+msgid "Preview Flare"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:269
+msgid "Flare Options"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:349
+#: includes/core/post-type/class-flare-post-type.php:266
+msgid "Status"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:366
+#: includes/core/post-type/class-flare-post-type.php:302
+msgid "Active"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-metabox.php:383
+msgid "Page Builders"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:54
+#: includes/core/post-type/class-flare-post-type.php:91
+msgid "Flareo Flares"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:55
+msgid "Flare"
+msgstr ""
+
+#. translators: 1. Trademarked term
+#: includes/core/post-type/class-flare-post-type.php:58
+msgid "%1$s flare"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:59
+msgid "Flare Archives"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:60
+msgid "Flare Attributes"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:61
+msgid "Parent Flare:"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:62
+msgid "All Flares"
+msgstr ""
+
+#. translators: Non-personal infinitive verb
+#: includes/core/post-type/class-flare-post-type.php:64
+#: includes/core/post-type/class-flare-post-type.php:67
+msgid "New Flare"
+msgstr ""
+
+#. translators: Non-personal infinitive verb
+#: includes/core/post-type/class-flare-post-type.php:66
+msgctxt "Flare"
+msgid "New Flare"
+msgstr ""
+
+#. translators: Non-personal infinitive verb
+#: includes/core/post-type/class-flare-post-type.php:69
+msgid "Edit Flare"
+msgstr ""
+
+#. translators: Non-personal infinitive verb
+#: includes/core/post-type/class-flare-post-type.php:71
+msgid "Update Flare"
+msgstr ""
+
+#. translators: Non-personal infinitive verb
+#: includes/core/post-type/class-flare-post-type.php:73
+msgid "View Flare"
+msgstr ""
+
+#. translators: Non-personal infinitive verb
+#: includes/core/post-type/class-flare-post-type.php:75
+msgid "View Flares"
+msgstr ""
+
+#. translators: Non-personal infinitive verb
+#: includes/core/post-type/class-flare-post-type.php:77
+msgid "Search Flares"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:78
+msgctxt "Flare"
+msgid "Not found"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:79
+msgctxt "Flare"
+msgid "Not found in trash"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:218
+msgid "Status updated:"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:219
+msgid "Error updating status:"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:220
+msgid "Please report it to 21Press support!"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:321
+msgid "N/A"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:361
+msgid "User does not have permission to edit this flare"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:375
+msgid "Invalid data"
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:385
+msgid "Flareo flare has been published."
+msgstr ""
+
+#: includes/core/post-type/class-flare-post-type.php:386
+msgid "Flareo flare updated."
+msgstr ""
+
+#: includes/display/types/class-shortcode.php:54
+msgid "Flareo: Please provide the Flare id attribute!"
+msgstr ""
+
+#: includes/display/types/class-shortcode.php:66
+msgid "Invalid flare ID provided."
+msgstr ""
+
+#: includes/display/types/class-shortcode.php:74
+msgid "Flareo: The specified flare is not set to be inserted via Shortcode method."
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:71
+msgid "Your settings have been saved."
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:141
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:142
+msgid "Select Image"
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:143
+msgid "Use this image"
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:685
+msgid "Toggle"
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:749
+msgid "Change Image"
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:750
+msgid "Revert to Default"
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:800
+#: includes/settings/class-admin-settings.php:801
+msgid "Go"
+msgstr ""
+
+#: includes/settings/class-admin-settings.php:830
+msgid "Export All"
+msgstr ""
+
+#: includes/settings/class-register-settings.php:44
+#: includes/settings/views/html-admin-settings.php:27
+msgid "Flareo Settings"
+msgstr ""
+
+#: includes/settings/tabs/class-general.php:24
+msgid "General"
+msgstr ""
+
+#: includes/settings/tabs/class-general.php:45
+msgid "Default Flare Color"
+msgstr ""
+
+#: includes/settings/tabs/class-general.php:51
+msgid "Set the default flare color for all the flares."
+msgstr ""
+
+#: includes/settings/views/html-admin-settings.php:55
+msgid "Save changes"
+msgstr ""
