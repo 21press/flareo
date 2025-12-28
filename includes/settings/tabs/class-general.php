@@ -42,19 +42,15 @@ class General extends Settings_Page {
 
 			$settings = array(
 				array(
-					'title' => esc_html__( 'Default Flare Type', 'flareo' ),
+					'title' => esc_html__( 'Default Flare Color', 'flareo' ),
 					'type'  => 'title',
 					'id'    => 'p21_flareo_general_settings',
 				),
 				array(
-					'id'      => 'default_flare_type',
-					'desc'    => __( 'Select the default flare type for all the new flares.', 'flareo' ),
-					'type'    => 'select',
-					'default' => 'presets',
-					'options' => array(
-						'presets' => __( 'Presets', 'flareo' ),
-						'emojis'  => __( 'Emojis', 'flareo' ),
-					),
+					'id'      => 'default_flare_color',
+					'title'   => __( 'Set the default flare color for all the flares.', 'flareo' ),
+					'type'    => 'color',
+					'default' => '#6B4DEC',
 				),
 				array(
 					'type' => 'sectionend',

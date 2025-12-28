@@ -783,7 +783,7 @@ class Admin_Settings {
 								style="<?php echo esc_attr( $value['css'] ); ?>"
 								type="text"
 								data-default-color="<?php echo esc_attr( $default_color ); ?>"
-								value="<?php echo $has_color_set ? esc_attr( $option_value ) : ''; ?>"
+								value="<?php echo $has_color_set ? esc_attr( $option_value ) : esc_attr( $default_color ); ?>"
 								class="color-field <?php echo esc_attr( $value['class'] ); ?>"
 								<?php echo esc_attr( implode( ' ', $custom_attributes ) ); ?>
 								/>
