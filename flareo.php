@@ -6,9 +6,9 @@
  * @copyright   SmallTownDev
  * @link        https://21press.com/plugins/flareo/
  *
- * Plugin Name: Flareo - Beautiful celebration effects
+ * Plugin Name: Flareo
  * Plugin URI:  https://github.com/21press/flareo/
- * Description: Add beautiful celebration effects to WordPress using emojis — no setup required.
+ * Description: Add beautiful effects to your WordPress Site — just plug and play.
  * Version:     0.1.0
  * Author:      21Press
  * Author URI:  https://21Press.com/
@@ -30,6 +30,13 @@ define( 'P21_FLAREO_URL', plugin_dir_url( P21_FLAREO_FILE ) );
 define( 'P21_FLAREO_DIR', plugin_dir_path( P21_FLAREO_FILE ) );
 define( 'P21_FLAREO_BASE', plugin_basename( P21_FLAREO_FILE ) );
 define( 'P21_FLAREO_WEBSITE_URL', 'https://21press.com/plugins/flareo' );
+
+// Third party dependencies.
+$p21_flareo_vendor_autoload = __DIR__ . '/vendor/autoload.php';
+
+if ( is_readable( $p21_flareo_vendor_autoload ) ) {
+	require_once $p21_flareo_vendor_autoload;
+}
 
 add_action(
 	'plugins_loaded',
