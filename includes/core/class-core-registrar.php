@@ -22,6 +22,9 @@ class Core_Registrar {
 	 * Class constructor.
 	 */
 	public function __construct() {
+		// Registers and manages assets.
+		Assets::get_instance();
+
 		// Registers and manages Flare post type instance.
 		Flare_Post_Type::get_instance();
 
