@@ -7,6 +7,8 @@
 
 namespace P21\Flareo\Settings;
 
+defined( 'ABSPATH' ) || exit;
+
 use P21\Flareo\Utils\Has_Instance;
 
 /**

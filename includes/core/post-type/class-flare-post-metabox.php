@@ -7,6 +7,8 @@
 
 namespace P21\Flareo\Core\PostType;
 
+defined( 'ABSPATH' ) || exit;
+
 use P21\Flareo\Utils\Has_Instance;
 use P21\Flareo\Core\PostType\Flare_Post_Type;
 

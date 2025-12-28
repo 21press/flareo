@@ -46,7 +46,6 @@ final class Plugin {
 	 * Registers the plugin with WordPress.
 	 */
 	public function register() {
-		add_action( 'init', array( self::$instance, 'load_textdomain' ) );
 		add_filter( 'plugin_action_links_' . plugin_basename( P21_FLAREO_FILE ), array( self::$instance, 'plugin_action_links' ) );
 
 		// Core.
@@ -118,16 +117,6 @@ final class Plugin {
 
 		// Core - Database Upgrader.
 		require_once P21_FLAREO_DIR . 'includes/core/class-database-upgrader.php';
-	}
-
-	/**
-	 * Load plugin language files.
-	 *
-	 * @access public
-	 * @return void
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'flareo', false, dirname( P21_FLAREO_BASE ) . '/languages/' );
 	}
 
 	/**

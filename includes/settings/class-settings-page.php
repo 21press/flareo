@@ -10,7 +10,7 @@ namespace P21\Flareo\Settings;
 defined( 'ABSPATH' ) || exit;
 
 /**
- * class Settings_Page.
+ * Class Settings_Page.
  */
 abstract class Settings_Page {
 

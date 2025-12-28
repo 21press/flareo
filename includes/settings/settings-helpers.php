@@ -7,6 +7,8 @@
 
 namespace P21\Flareo\Settings;
 
+defined( 'ABSPATH' ) || exit;
+
 /**
  * Clean variables using sanitize_text_field. Arrays are cleaned recursively.
  * Non-scalar values are ignored.
