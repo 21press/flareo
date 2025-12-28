@@ -8,8 +8,11 @@
 
 namespace P21\Flareo;
 
+defined( 'ABSPATH' ) || exit;
+
 use P21\Flareo\Core\Core_Registrar;
 use P21\Flareo\Core\Database_Upgrader;
+use P21\Flareo\Display\Display_Flare;
 
 /**
  * Class Plugin.
@@ -48,6 +51,9 @@ final class Plugin {
 
 		// Core.
 		Core_Registrar::get_instance();
+
+		// Display.
+		Display_Flare::get_instance();
 
 		// Migrations.
 		$this->database_upgrader = new Database_Upgrader();
@@ -96,7 +102,7 @@ final class Plugin {
 		// Core.
 		require_once P21_FLAREO_DIR . 'includes/utils/trait-instance.php';
 		require_once P21_FLAREO_DIR . 'includes/core/class-options.php';
-		require_once P21_FLAREO_DIR . 'includes/core/class-database-upgrader.php';
+		require_once P21_FLAREO_DIR . 'includes/core/class-assets.php';
 		require_once P21_FLAREO_DIR . 'includes/core/post-type/class-flare-post-fields.php';
 		require_once P21_FLAREO_DIR . 'includes/core/post-type/class-flare-post-type.php';
 		require_once P21_FLAREO_DIR . 'includes/core/post-type/class-flare-post-utilities.php';
@@ -106,6 +112,12 @@ final class Plugin {
 		// Settings.
 		require_once P21_FLAREO_DIR . 'includes/settings/class-register-settings.php';
 		require_once P21_FLAREO_DIR . 'includes/settings/settings-helpers.php';
+
+		// Display.
+		require_once P21_FLAREO_DIR . 'includes/display/class-display-flare.php';
+
+		// Core - Database Upgrader.
+		require_once P21_FLAREO_DIR . 'includes/core/class-database-upgrader.php';
 	}
 
 	/**
