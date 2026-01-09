@@ -32,7 +32,7 @@ class Flare_Post_Type {
 		// Display data to custom columns at the Flare CPT.
 		add_action( 'manage_p21-flareo-flare_posts_custom_column', array( $this, 'display_custom_column_data' ), 10, 2 );
 		// Action to update flare status on toggles.
-		add_action( 'wp_ajax_update_flare_status', array( $this, 'update_flare_status' ) );
+		add_action( 'wp_ajax_flareo_update_flare_status', array( $this, 'update_flare_status' ) );
 
 		// Change Default new Flare post from auto-draft to draft.
 		add_action( 'wp_insert_post', array( $this, 'change_default_post_status' ), 10, 3 );
@@ -213,7 +213,7 @@ class Flare_Post_Type {
 			'p21_flareo_flare_data',
 			array(
 				'ajax_url'            => admin_url( 'admin-ajax.php' ),
-				'nonce'               => wp_create_nonce( 'update_flare_status_nonce' ),
+				'nonce'               => wp_create_nonce( 'flareo_update_flare_status_nonce' ),
 				'translation_strings' => array(
 					'status_updated'  => __( 'Status updated:', 'flareo' ),
 					'status_error'    => __( 'Error updating status:', 'flareo' ),
@@ -349,7 +349,7 @@ class Flare_Post_Type {
 	 */
 	public function update_flare_status() {
 
-		if ( isset( $_POST['nonce'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'update_flare_status_nonce' ) ) {
+		if ( isset( $_POST['nonce'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'flareo_update_flare_status_nonce' ) ) {
 			return;
 		}
 

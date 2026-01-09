@@ -1,4 +1,4 @@
-# Copyright (C) 2025 21Press
+# Copyright (C) 2026 21Press
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-12-28T16:43:07+00:00\n"
+"POT-Creation-Date: 2026-01-09T10:44:41+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: flareo\n"
@@ -41,11 +41,11 @@ msgid "https://21Press.com/"
 msgstr ""
 
 #. translators: %s: version number
-#: flareo.php:48
+#: flareo.php:41
 msgid "Flareo requires PHP version %s"
 msgstr ""
 
-#: flareo.php:49
+#: flareo.php:42
 msgid "Error Activating"
 msgstr ""
 
@@ -242,33 +242,33 @@ msgstr ""
 msgid "Copy"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:250
+#: includes/core/post-type/class-flare-post-metabox.php:252
 msgid "Flare Preview"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:255
+#: includes/core/post-type/class-flare-post-metabox.php:257
 msgid "Press the button to see a preview of the flare based on the selected options and styles."
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:256
+#: includes/core/post-type/class-flare-post-metabox.php:258
 msgid "Preview Flare"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:269
+#: includes/core/post-type/class-flare-post-metabox.php:271
 msgid "Flare Options"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:349
+#: includes/core/post-type/class-flare-post-metabox.php:352
 #: includes/core/post-type/class-flare-post-type.php:266
 msgid "Status"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:366
+#: includes/core/post-type/class-flare-post-metabox.php:369
 #: includes/core/post-type/class-flare-post-type.php:302
 msgid "Active"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:383
+#: includes/core/post-type/class-flare-post-metabox.php:386
 msgid "Page Builders"
 msgstr ""
 
@@ -431,7 +431,7 @@ msgid "Export All"
 msgstr ""
 
 #: includes/settings/class-register-settings.php:44
-#: includes/settings/views/html-admin-settings.php:27
+#: includes/settings/views/html-admin-settings.php:31
 msgid "Flareo Settings"
 msgstr ""
 
@@ -447,6 +447,6 @@ msgstr ""
 msgid "Set the default flare color for all the flares."
 msgstr ""
 
-#: includes/settings/views/html-admin-settings.php:55
+#: includes/settings/views/html-admin-settings.php:63
 msgid "Save changes"
 msgstr ""

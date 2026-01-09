@@ -244,6 +244,8 @@ class Flare_Post_Metabox {
 			return;
 		}
 
+		$allowed_html = $this->get_allowed_html();
+
 		// Preview section.
 		add_meta_box(
 			'p21-flareo-flare-preview-meta-box-ui',
@@ -267,7 +269,7 @@ class Flare_Post_Metabox {
 		add_meta_box(
 			'p21-flareo-flare-legendary-meta-box-ui',
 			esc_attr__( 'Flare Options', 'flareo' ),
-			function ( $flare ) {
+			function ( $flare ) use ( $allowed_html ) {
 				$all_fields = Flare_Post_Fields::get_all();
 
 				ob_start();
@@ -281,7 +283,8 @@ class Flare_Post_Metabox {
 							<div class="card-header">
 								<h2 class="card-header__title">
 									<span class="card-header__icon">
-										<?php echo Flare_Post_Fields::get_section_icon( $section['key'] ); // phpcs:ignore ?>
+										<?php
+										echo wp_kses( Flare_Post_Fields::get_section_icon( $section['key'] ), $allowed_html ); // phpcs:ignore ?>
 									</span>
 									<?php echo esc_html( $section['title'] ); ?></h2>
 									<span class="card-header__toggle-indicator">
@@ -515,5 +518,43 @@ class Flare_Post_Metabox {
 			// Update the flare post.
 			wp_update_post( $args );
 		}
+	}
+
+	/**
+	 * Get allowed HTML for wp_kses.
+	 *
+	 * @return array<string, array<string, array>>
+	 */
+	public function get_allowed_html() {
+		return array(
+			'a'      => array(
+				'href'   => array(),
+				'title'  => array(),
+				'target' => array(),
+				'rel'    => array(),
+			),
+			'br'     => array(),
+			'em'     => array(),
+			'strong' => array(),
+			'p'      => array(),
+			'ul'     => array(),
+			'ol'     => array(),
+			'li'     => array(),
+			'svg'    => array(
+				'width'   => array(),
+				'height'  => array(),
+				'viewbox' => array(),
+				'fill'    => array(),
+				'xmlns'   => array(),
+			),
+			'path'   => array(
+				'd'               => array(),
+				'fill'            => array(),
+				'stroke'          => array(),
+				'stroke-width'    => array(),
+				'stroke-linecap'  => array(),
+				'stroke-linejoin' => array(),
+			),
+		);
 	}
 }

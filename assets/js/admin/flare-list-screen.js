@@ -20,7 +20,7 @@
 							url: P21WL.ajax_url,
 							type: 'POST',
 							data: {
-								action: 'update_flare_status',
+								action: 'flareo_update_flare_status',
 								flare_id,
 								is_active: is_active,
 								nonce: P21WL.nonce

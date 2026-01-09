@@ -758,7 +758,7 @@ class Admin_Settings {
 									placeholder="<?php echo esc_attr( $value['placeholder'] ); ?>"
 									<?php echo esc_attr( implode( ' ', $custom_attributes ) ); ?>
 									/><?php echo esc_html( $value['suffix'] ); ?>
-									<?php echo $description; // phpcs:ignore. ?>
+									<?php echo wp_kses_post( $description ); // phpcs:ignore. ?>
 							</div>
 						</td>
 					</tr>
