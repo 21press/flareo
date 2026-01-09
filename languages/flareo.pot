@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flareo 0.1.0\n"
+"Project-Id-Version: Flareo 0.2.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flareo\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-09T10:44:41+00:00\n"
+"POT-Creation-Date: 2026-01-09T10:48:29+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: flareo\n"
@@ -258,17 +258,17 @@ msgstr ""
 msgid "Flare Options"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:352
+#: includes/core/post-type/class-flare-post-metabox.php:351
 #: includes/core/post-type/class-flare-post-type.php:266
 msgid "Status"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:369
+#: includes/core/post-type/class-flare-post-metabox.php:368
 #: includes/core/post-type/class-flare-post-type.php:302
 msgid "Active"
 msgstr ""
 
-#: includes/core/post-type/class-flare-post-metabox.php:386
+#: includes/core/post-type/class-flare-post-metabox.php:385
 msgid "Page Builders"
 msgstr ""
 

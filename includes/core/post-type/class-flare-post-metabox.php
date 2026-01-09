@@ -283,8 +283,7 @@ class Flare_Post_Metabox {
 							<div class="card-header">
 								<h2 class="card-header__title">
 									<span class="card-header__icon">
-										<?php
-										echo wp_kses( Flare_Post_Fields::get_section_icon( $section['key'] ), $allowed_html ); // phpcs:ignore ?>
+										<?php echo wp_kses( Flare_Post_Fields::get_section_icon( $section['key'] ), $allowed_html ); // phpcs:ignore ?>
 									</span>
 									<?php echo esc_html( $section['title'] ); ?></h2>
 									<span class="card-header__toggle-indicator">

@@ -9,7 +9,7 @@
  * Plugin Name: Flareo
  * Plugin URI:  https://github.com/21press/flareo/
  * Description: Add beautiful effects to your WordPress Site — just plug and play.
- * Version:     0.1.0
+ * Version:     0.2.0
  * Author:      21Press
  * Author URI:  https://21Press.com/
  * License:     GPL2
@@ -24,7 +24,7 @@ defined( 'ABSPATH' ) || exit;
 
 define( 'P21_FLAREO_PHP_MINIMUM', '8.0' );
 define( 'P21_FLAREO_WP_MINIMUM', '6.0' );
-define( 'P21_FLAREO_VERSION', '0.1.0' );
+define( 'P21_FLAREO_VERSION', '0.2.0' );
 define( 'P21_FLAREO_FILE', __FILE__ );
 define( 'P21_FLAREO_URL', plugin_dir_url( P21_FLAREO_FILE ) );
 define( 'P21_FLAREO_DIR', plugin_dir_path( P21_FLAREO_FILE ) );
