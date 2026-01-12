@@ -21,10 +21,32 @@ class Shortcode {
 	use Has_Instance;
 
 	/**
+	 * Inline scripts to be added via wp_footer.
+	 *
+	 * @var array
+	 */
+	private $inline_scripts = array();
+
+	/**
 	 * Class constructor.
 	 */
 	public function __construct() {
-			add_shortcode( 'p21_flareo_flare', array( $this, 'render' ) );
+		add_shortcode( 'p21_flareo_flare', array( $this, 'render' ) );
+		add_action( 'wp_footer', array( $this, 'print_inline_scripts' ), 5 );
+	}
+
+	/**
+	 * Print collected inline scripts via wp_add_inline_script.
+	 *
+	 * @return void
+	 */
+	public function print_inline_scripts() {
+		if ( empty( $this->inline_scripts ) ) {
+			return;
+		}
+
+		$combined_script = implode( "\n", $this->inline_scripts );
+		wp_add_inline_script( 'p21-flareo-flare-js', $combined_script );
 	}
 
 	/**
@@ -117,6 +139,11 @@ class Shortcode {
 					});';
 		}
 
-		return '<script type="text/javascript">' . $safe_js . '</script>';
+		// Collect inline script to be added via wp_add_inline_script in wp_footer.
+		if ( ! empty( $safe_js ) ) {
+			$this->inline_scripts[ $flare_id ] = $safe_js;
+		}
+
+		return '';
 	}
 }
