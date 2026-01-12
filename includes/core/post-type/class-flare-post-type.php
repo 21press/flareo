@@ -348,8 +348,8 @@ class Flare_Post_Type {
 	 * @return void
 	 */
 	public function update_flare_status() {
-
-		if ( isset( $_POST['nonce'] ) && ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'flareo_update_flare_status_nonce' ) ) {
+		// Check nonce security.
+		if ( ! isset( $_POST['nonce'] ) || ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['nonce'] ) ), 'flareo_update_flare_status_nonce' ) ) {
 			return;
 		}
 
