@@ -1,6 +1,6 @@
 {
   "name": "flareo",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -29,6 +29,7 @@
     "languages",
     "readme.txt",
 		"!readme.md",
+		"!flareo.zip",
     "flareo.php"
   ]
 }
