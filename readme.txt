@@ -14,6 +14,8 @@ Add beautiful and interactive effects to your WordPress site — just plug and p
 
 Flareo is a lightweight WordPress plugin that lets you add stunning visual effects like confetti to your website. Perfect for celebrations, announcements, or adding a touch of fun to user interactions.
 
+https://vimeo.com/1152233817?fl=pl&fe=sh
+
 **Features:**
 
 * Easy to use — no coding required
