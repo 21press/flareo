@@ -3,12 +3,12 @@ Contributors: 21press, lushkant
 Requires at least: 6.0
 Requires PHP: 8.0
 Tested up to: 6.9
-Stable tag: 0.2.0
+Stable tag: 0.4.0
 Tags: animation, effects, fun, confetti, celebration
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Add beautiful effects to your WordPress site — just plug and play.
+Add beautiful and interactive effects to your WordPress site — just plug and play.
 
 == Description ==
 
@@ -70,6 +70,12 @@ No. Scripts only load when a flare is actually used on the page.
 3. Use shortcodes to place effects anywhere
 
 == Changelog ==
+
+= 0.4.0
+* Prepare for first release at wp.org
+
+= 0.3.0 =
+* Fix wp.org reported issues
 
 = 0.2.0 =
 * Fix wp.org reported issues
