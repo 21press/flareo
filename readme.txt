@@ -1,5 +1,5 @@
-=== Flareo ===
-Contributors: 21press
+=== Flareo: Beautiful effects for your Site ===
+Contributors: 21press, lushkant
 Requires at least: 6.0
 Requires PHP: 8.0
 Tested up to: 6.9

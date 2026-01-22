@@ -31,6 +31,58 @@ define( 'P21_FLAREO_DIR', plugin_dir_path( P21_FLAREO_FILE ) );
 define( 'P21_FLAREO_BASE', plugin_basename( P21_FLAREO_FILE ) );
 define( 'P21_FLAREO_WEBSITE_URL', 'https://21press.com/plugins/flareo' );
 
+// Third party dependencies.
+$p21_flareo_vendor_autoload = __DIR__ . '/vendor/autoload.php';
+
+if ( is_readable( $p21_flareo_vendor_autoload ) ) {
+	require_once $p21_flareo_vendor_autoload;
+}
+
+if ( ! function_exists( 'p21_flareo_fs' ) ) {
+	/**
+	 * Create a helper function for easy SDK access.
+	 *
+	 * @since 0.4.0
+	 *
+	 * @return object
+	 */
+	function p21_flareo_fs() {
+		global $p21_flareo_fs;
+
+		if ( ! isset( $p21_flareo_fs ) ) {
+			// Include Freemius SDK.
+			// SDK is auto-loaded through Composer.
+
+			$p21_flareo_fs = fs_dynamic_init(
+				array(
+					'id'             => '22563',
+					'slug'           => 'flareo',
+					'type'           => 'plugin',
+					'public_key'     => 'pk_36cb2e42f663047bea1ddec90f019',
+					'is_premium'     => false,
+					'has_addons'     => false,
+					'has_paid_plans' => false,
+					'menu'           => array(
+						'slug'       => 'edit.php?post_type=p21-flareo-flare',
+						'first-path' => 'edit.php?post_type=p21-flareo-flare',
+						'account'    => false,
+						'support'    => false,
+						'contact'    => false,
+						'addons'     => false,
+					),
+				)
+			);
+		}
+
+		return $p21_flareo_fs;
+	}
+
+	// Init Freemius.
+	p21_flareo_fs();
+	// Signal that SDK was initiated.
+	do_action( 'p21_flareo_fs_loaded' );
+}
+
 add_action(
 	'plugins_loaded',
 	function () {

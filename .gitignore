@@ -4,6 +4,7 @@
 node_modules
 /yarn-error.log
 /build
+/vendor
 /third-party
 phpcs.xml
 gulp.config.json

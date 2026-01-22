@@ -2,14 +2,14 @@
 # This file is distributed under the GPL2.
 msgid ""
 msgstr ""
-"Project-Id-Version: Flareo 0.2.0\n"
+"Project-Id-Version: Flareo 0.3.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/flareo\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2026-01-09T10:48:29+00:00\n"
+"POT-Creation-Date: 2026-01-12T05:08:38+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.10.0\n"
 "X-Domain: flareo\n"
@@ -381,15 +381,15 @@ msgstr ""
 msgid "Flareo flare updated."
 msgstr ""
 
-#: includes/display/types/class-shortcode.php:54
+#: includes/display/types/class-shortcode.php:76
 msgid "Flareo: Please provide the Flare id attribute!"
 msgstr ""
 
-#: includes/display/types/class-shortcode.php:66
+#: includes/display/types/class-shortcode.php:88
 msgid "Invalid flare ID provided."
 msgstr ""
 
-#: includes/display/types/class-shortcode.php:74
+#: includes/display/types/class-shortcode.php:96
 msgid "Flareo: The specified flare is not set to be inserted via Shortcode method."
 msgstr ""
 
