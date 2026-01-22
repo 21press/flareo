@@ -73,7 +73,7 @@ No. Scripts only load when a flare is actually used on the page.
 
 == Changelog ==
 
-= 0.4.0
+= 0.4.0 =
 * Prepare for first release at wp.org
 
 = 0.3.0 =
